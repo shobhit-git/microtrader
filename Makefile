@@ -10,7 +10,7 @@ TEST_REPO_NAME ?= microtrader-dev
 TEST_DIR ?= build/test-results/junit/
 
 # AWS ECR Settings
-DOCKER_REGISTRY ?= 360825983472.dkr.ecr.us-east-1.amazonaws.com
+DOCKER_REGISTRY ?= 360825983472.dkr.ecr.us-west-2.amazonaws.com
 AWS_ACCOUNT_ID ?= 360825983472
 DOCKER_LOGIN_EXPRESSION := eval $$(aws ecr get-login --no-include-email --registry-ids $(AWS_ACCOUNT_ID))
 
