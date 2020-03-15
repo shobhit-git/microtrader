@@ -1,4 +1,4 @@
-FROM 543279062384.dkr.ecr.us-west-2.amazonaws.com/capstone/microtrader-base
+FROM 360825983472.dkr.ecr.us-west-2.amazonaws.com/capstone/microtrader-base
 MAINTAINER Justin Menga <justin.menga@gmail.com>
 LABEL application.component=microtrader-portfolio
 
