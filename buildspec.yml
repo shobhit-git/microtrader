@@ -20,6 +20,6 @@ phases:
       - make clean
       - make logout
 
-artifacts:
-  files:
-    - build/version.json
+#artifacts:
+  #files:
+   # - build/version.json
