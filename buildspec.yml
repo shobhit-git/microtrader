@@ -4,22 +4,22 @@ phases:
   pre_build:
     commands:
       - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --storage-driver=overlay&
-      #- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"
+      - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"
       - make login
   build:
     commands:
       - export BUILD_ID=$(echo $CODEBUILD_BUILD_ID | sed 's/^[^:]*://g')
       - export APP_VERSION=$CODEBUILD_RESOLVED_SOURCE_VERSION.$BUILD_ID
-      #- make test
-      #- make release
-      #- make tag:default
-      #- make publish
-      #- make version > build/version.json
+      - make test
+      - make release
+      - make tag:default
+      - make publish
+      - make version > build/version.json
   post_build:
     commands:
       - make clean
       - make logout
 
-#artifacts:
-  #files:
-   # - build/version.json
+artifacts:
+  files:
+    - build/version.json
